@@ -1,4 +1,4 @@
-declare module 'windows-1252' {
+declare module '@mfellner/windows-1252-cjs' {
   type EncodeOptions = {
     mode: 'fatal' | 'replacement';
   };
@@ -6,13 +6,13 @@ declare module 'windows-1252' {
     mode: 'fatal' | 'replacement';
   };
 
-  export declare function encode(
+  export function encode(
     text: string,
     options?: EncodeOptions
   ): Uint16Array;
-  export declare function decode(
+  export function decode(
     buffer: Uint16Array | Uint8Array | Buffer | string,
     options?: DecodeOptions
   ): string;
-  export type labels = string[];
+  export const labels: string[];
 }

@@ -1,9 +1,16 @@
 {
-	"name": "windows-1252",
+	"name": "@mfellner/windows-1252-cjs",
 	"version": "3.0.4",
 	"description": "A robust windows-1252 encoder/decoder written in JavaScript.",
-	"homepage": "https://mths.be/windows-1252",
-	"exports": "./windows-1252.mjs",
+	"homepage": "https://github.com/mfellner/windows-1252-cjs",
+	"main": "./windows-1252.js",
+	"publishConfig": {
+		"access": "public"
+	},
+	"exports": {
+		"import": "./windows-1252.mjs",
+		"require": "./windows-1252.js"
+	},
 	"keywords": [
 		"codec",
 		"decoder",
@@ -35,26 +42,35 @@
 		"name": "Mathias Bynens",
 		"url": "https://mathiasbynens.be/"
 	},
+	"contributors": [
+		{
+			"name": "Maximilian Fellner",
+			"url": "https://maximilianfellner.eu"
+		}
+	],
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/mathiasbynens/windows-1252.git"
+		"url": "https://github.com/mfellner/windows-1252-cjs.git"
 	},
 	"bugs": "https://github.com/mathiasbynens/windows-1252/issues",
 	"files": [
 		"LICENSE-MIT.txt",
 		"windows-1252.mjs",
+		"windows-1252.js",
 		"windows-1252.d.ts"
 	],
 	"types": "windows-1252.d.ts",
 	"scripts": {
 		"download": "curl https://encoding.spec.whatwg.org/index-windows-1252.txt > data/index.txt",
 		"build": "node scripts/transform-data.js",
+		"build:cjs": "tsc --build && mv dist/windows-1252.mjs windows-1252.js",
 		"test": "node tests/tests.mjs",
 		"cover": "istanbul cover --report html --verbose --dir coverage tests/tests.mjs"
 	},
 	"devDependencies": {
 		"istanbul": "^0.4.2",
 		"jsesc": "^3.0.2",
-		"lodash.template": "^4.5.0"
+		"lodash.template": "^4.5.0",
+		"typescript": "^5.3.3"
 	}
 }

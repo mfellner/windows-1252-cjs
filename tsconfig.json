@@ -1,0 +1,12 @@
+{
+	"compilerOptions": {
+		"outDir": "./dist",
+		"target": "es2018",
+		"moduleResolution": "node",
+		"module": "commonjs",
+		"allowJs": true,
+		"declaration": false,
+		"sourceMap": false
+	},
+	"include": ["windows-1252.mjs"]
+}
